@@ -88,14 +88,52 @@ namespace Recursion
             }
         }
 
+        static void DigitsOfNumber(int n)
+        {
+            float x = 0;
+
+            if (n < 10)
+            {
+                Console.WriteLine(n);
+                return;
+            }
+            else
+            {
+                x = n % 10;
+                Console.WriteLine(x);
+                DigitsOfNumber(n / 10);
+            }
+        }
+
+        static void DigitsOfNumber2(int n)
+        {
+            float x = 0;
+
+            if (n < 10)
+            {
+                Console.WriteLine(n);
+                return;
+            }
+            else
+            {
+                x = n % 10;
+                
+                DigitsOfNumber2(n / 10);
+                Console.WriteLine(x);
+            }
+        }
+
+
         public static void Main(string[] args)
         {
 
             Console.Write("Введите число: ");
 
             // int m = int.Parse(Console.ReadLine());
-            float n = int.Parse(Console.ReadLine());
-            Power(n);
+            int n = int.Parse(Console.ReadLine());
+           // Power(n);
+
+            DigitsOfNumber2(n);
 
             //int x = Akkerman(m, n);
 
